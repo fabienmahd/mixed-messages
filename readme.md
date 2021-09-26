@@ -6,6 +6,7 @@
 
 ## Objectives
 
+| ----------------------------------------- |:---:|
 | Build a **Javascript** message generator  | [x] | 
 | Use **Git** version control               | [x] |
 | Use **command line**                      | [x] |
