@@ -21,36 +21,55 @@ We are using 30+ quotes that are inspirational, factual or funny, and we include
 - [funny](https://www.selfhelpcollective.com/support-files/27_free_funny_inspirational_quotes.pdf "funny")
 
 ## Approach
-1. we are building a list of *quote* objects from static information
-2. we are generating a random *index* to select a *quote* from the list
-3. we are using the quote's methods to display the *quote*, the *author* and the *type*
+1. we are randomly selecting a *quote* from each *type*
+2. we store the quote in an object
+3. we shuffle them 
 
 ## Object quote
 
 ```javascript
 /*     
-    Object describing and containing the quote
-    _quote  : quote
-    _author : author's name
-    _type   : inspirational, funny, fact
+    Creates an object to store the quotes from each type
+    getQuote(): returns a shuffled cobination of the quotes.
   
 */
-const quoteFactory = (quote, author, typeOfQuote) => {
+const quoteFactory = (fact, inspiration, someFun) => {
     return {
-        _quote: quote,
-        _author: author,
-        _type: typeOfQuote,        
+        _fact: fact,
+        _inspiration: inspiration,
+        _fun: someFun,        
         getQuote(){
-            return this._quote;
+            const shuffle = Math.floor(Math.random() * 5);
+            let message = "";
+            console.log(shuffle);
+            
+            switch(shuffle){
+                case 0:
+                    message = `${this._fact}. ${this._inspiration}. ${this._fun}.`;
+                    break;
+                break;
+                case 1:
+                    message = ` ${this._inspiration}. ${this._fact}. ${this._fun}.`;
+                    break;
+                case 2:
+                    message = `${this._fun}. ${this._inspiration}. ${this._fact}.`;
+                    break;
+                case 3:
+                message = `${this._fun}. ${this._fact}. ${this._inspiration}.`;
+                break;
+                case 4:
+                message = `${this._fun}.  ${this._fact}. ${this._inspiration}.`;
+                break;
+                default:
+                message = "I am not in the mood, just try another day";
+                break;
+            }
+            return message;
         },
-        getAuthor(){
-            return this._author;
-        },
-        getType(){
-            return this._type;
-        },
+       
      };
 }
+    
 ```
 
 
