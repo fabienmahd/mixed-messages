@@ -6,8 +6,8 @@
 
 ## Objectives
 
-| Objective                                 | status |    
-| ----------------------------------------- |:------:|
+| Objective                                 | Status |    
+|:----------------------------------------- |:------:|
 | Build a **Javascript** message generator  |   [x]  | 
 | Use **Git** version control               |   [x]  |
 | Use **command line**                      |   [x]  |
