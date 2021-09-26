@@ -84,6 +84,7 @@ const quoteFactory = (fact, inspiration, someFun) => {
                 break;
                 default:
                 message = "I am not in the mood, just try another day";
+                break;
             }
             return message;
         },
