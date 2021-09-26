@@ -21,7 +21,7 @@ We are using 30+ quotes that are inspirational, factual or funny, and we include
 - [funny](https://www.selfhelpcollective.com/support-files/27_free_funny_inspirational_quotes.pdf "funny")
 
 ## Approach
-1. we are building a list of *quotes* objects from static information
+1. we are building a list of *quote* objects from static information
 2. we are generating a random *index* to select a *quote* from the list
 3. we are using the quote's methods to display the *quote*, the *author* and the *type*
 
