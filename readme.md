@@ -6,20 +6,21 @@
 
 ## Objectives
 
-| ----------------------------------------- |:---:|
-| Build a **Javascript** message generator  | [x] | 
-| Use **Git** version control               | [x] |
-| Use **command line**                      | [x] |
-| Develop locally on your computer          | [x] |
+| Objective                                 | status |    
+| ----------------------------------------- |:------:|
+| Build a **Javascript** message generator  |   [x]  | 
+| Use **Git** version control               |   [x]  |
+| Use **command line**                      |   [x]  |
+| Develop locally on your computer          |   [x]  |
 
 
 ## Quotes
-We 30+ quotes that are inspirational, factual or funny, and we included the the references.
+We are using 30+ quotes that are inspirational, factual or funny, and we included the the references.
 - [inspirational](https://cdn.graciousquotes.com/wp-content/uploads/2021/02/100-Inspirational-Quotes-on-Learning-.pdf "source")
-- [facts](http://brunswicksouthps.vic.edu.au/wp-content/uploads/2015/04/PP-27-Facts-2015.pdf?_sm_au_=iVV552Wr2kfvFSN5 "source")
+- [factual](http://brunswicksouthps.vic.edu.au/wp-content/uploads/2015/04/PP-27-Facts-2015.pdf?_sm_au_=iVV552Wr2kfvFSN5 "source")
 - [funny](https://www.selfhelpcollective.com/support-files/27_free_funny_inspirational_quotes.pdf "funny")
 
 ## Approach
-1. we create a list of objects using a factory that takes the static quotes definitions as input
-3. we generate a random index and we display in the console the quote, the author and they type
+1. we are using a factory to create the list 
+2. we display the the quote, the author and they type in the console based on a randomized index
 
