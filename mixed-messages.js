@@ -59,12 +59,16 @@ const quoteFactory = (fact, inspiration, someFun) => {
     return {
         _fact: fact,
         _inspiration: inspiration,
-        _fun: someFun,        
+        _fun: someFun,
+        _last: -1,        
         getQuote(){
-            const shuffle = Math.floor(Math.random() * 5);
+            let shuffle = Math.floor(Math.random() * 5);
             let message = "";
-            console.log(shuffle);
             
+            //If called multiple times, avoind repeating 
+            while(shuffle === this._last) {
+                shuffle = Math.floor(Math.random() * 5);
+            }
             switch(shuffle){
                 case 0:
                     message = `${this._fact}. ${this._inspiration}. ${this._fun}.`;
@@ -80,12 +84,14 @@ const quoteFactory = (fact, inspiration, someFun) => {
                 message = `${this._fun}. ${this._fact}. ${this._inspiration}.`;
                 break;
                 case 4:
-                message = `${this._fun}.  ${this._fact}. ${this._inspiration}.`;
+                message = ` ${this._inspiration}. ${this._fun}.  ${this._fact}.`;
                 break;
                 default:
                 message = "I am not in the mood, just try another day";
                 break;
             }
+            this._last = shuffle;
+
             return message;
         },
        
@@ -106,6 +112,12 @@ const someFun = funny[pickAnIndex(funny.length)][0];
 const quote = quoteFactory(aFact,anInspiration,someFun);
 
 //Display a random combination of the quotes
+console.log(quote.getQuote());
+console.log('\n');
+console.log(quote.getQuote());
+console.log('\n');
+console.log(quote.getQuote());
+console.log('\n');
 console.log(quote.getQuote());
     
 
