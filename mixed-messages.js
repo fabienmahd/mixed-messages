@@ -51,74 +51,60 @@ const funny = [
 ];
 
 /*     
-    Object describing and containing the quote
-    _quote  : quote
-    _author : author's name
-    _type   : inspirational, funny, fact
+    Creates an object to store the quotes from each type
+    getQuote(): returns a shuffled cobination of the quotes.
   
 */
-const quoteFactory = (quote, author, typeOfQuote) => {
+const quoteFactory = (fact, inspiration, someFun) => {
     return {
-        _quote: quote,
-        _author: author,
-        _type: typeOfQuote,        
+        _fact: fact,
+        _inspiration: inspiration,
+        _fun: someFun,        
         getQuote(){
-            return this._quote;
+            const shuffle = Math.floor(Math.random() * 5);
+            let message = "";
+            console.log(shuffle);
+            
+            switch(shuffle){
+                case 0:
+                    message = `${this._fact}. ${this._inspiration}. ${this._fun}.`;
+                    break;
+                break;
+                case 1:
+                    message = ` ${this._inspiration}. ${this._fact}. ${this._fun}.`;
+                    break;
+                case 2:
+                    message = `${this._fun}. ${this._inspiration}. ${this._fact}.`;
+                    break;
+                case 3:
+                message = `${this._fun}. ${this._fact}. ${this._inspiration}.`;
+                break;
+                case 4:
+                message = `${this._fun}.  ${this._fact}. ${this._inspiration}.`;
+                break;
+                default:
+                message = "I am not in the mood, just try another day";
+            }
+            return message;
         },
-        getAuthor(){
-            return this._author;
-        },
-        getType(){
-            return this._type;
-        },
+       
      };
 }
     
 
-/* Build the complete list and identify the type
+/* Create a quote from quote.
 */
-const listOfQuotes = () => {
-    let list = [];
+const pickAnIndex = num => Math.floor(Math.random() * num);
 
-    for(i=0; i < facts.length; i++){
-        const quote = quoteFactory(facts[i][0],facts[i][1],'fact');
-        list.push(quote);
-    }
-    for(i=0; i < inspirational.length; i++){
-        const quote = quoteFactory(inspirational[i][0],inspirational[i][1],'inspirational');
-        list.push(quote);
-    }
-    for(i=0; i < funny.length; i++){
-        const quote = quoteFactory(funny[i][0],funny[i][1],'funny');
-        list.push(quote);
-    }
-    return list;
-};
+//Get a random quote of each type
+const aFact = facts[pickAnIndex(facts.length)][0];
+const anInspiration = inspirational[pickAnIndex(inspirational.length)][0];
+const someFun = funny[pickAnIndex(funny.length)][0];
 
-function logRandomQuote(list){
-    //Chef if lis to quote is valid
-    if (list.length === 0) {
-         return;
-    }
+//Store the randowm quotes
+const quote = quoteFactory(aFact,anInspiration,someFun);
 
-    //Select a random index
-    const index = Math.floor(Math.random() * list.length);
-    const quote =  list[index];
+//Display a random combination of the quotes
+console.log(quote.getQuote());
+    
 
-
-    if (!quote) {
-        console.log("something wrong happened");
-        return;
-    }
-    //Print the quote and its information
-    console.log(quote.getQuote());
-    console.log(`from: ${quote.getAuthor()} and cathegory ${quote.getType()}`);
-
-}
-/*  Main
-    1. Creaet the list
-    2. Log a random quote on the console
-*/
-const list = listOfQuotes();
-
-logRandomQuote(list);
