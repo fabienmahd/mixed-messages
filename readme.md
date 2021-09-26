@@ -22,7 +22,7 @@ We are using 30+ quotes that are inspirational, factual or funny, and we include
 
 ## Approach
 1. we are randomly selecting a *quote* from each *type*
-2. we store the quote in an object
+2. we create an object with the quotes
 3. we shuffle them 
 
 ## Object quote
