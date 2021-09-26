@@ -25,3 +25,32 @@ We are using 30+ quotes that are inspirational, factual or funny, and we include
 2. we are generating a random *index* to select a *quote* from the list
 3. we are using the quote's methods to display the *quote*, the *author* and the *type*
 
+## Object quote
+
+```javascript
+/*     
+    Object describing and containing the quote
+    _quote  : quote
+    _author : author's name
+    _type   : inspirational, funny, fact
+  
+*/
+const quoteFactory = (quote, author, typeOfQuote) => {
+    return {
+        _quote: quote,
+        _author: author,
+        _type: typeOfQuote,        
+        getQuote(){
+            return this._quote;
+        },
+        getAuthor(){
+            return this._author;
+        },
+        getType(){
+            return this._type;
+        },
+     };
+}
+```
+
+
